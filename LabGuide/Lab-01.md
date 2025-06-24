@@ -154,7 +154,7 @@ In Part 1, we will set up and populate the data in the database, as well as the 
    ![](Images/L1-S29.png)  
 
 1. Search Powershell in the Search bar of your LabVM and select Powershell. 
-1. Execute the command `C:\LabFiles\pg-sk-agents-lab\scripts\` to navigate to the scripts folder.
+1. Execute the command `cd C:\LabFiles\pg-sk-agents-lab\scripts\` to navigate to the scripts folder.
 1. Execute the following command to run the script to fetch details.
 
    ```
