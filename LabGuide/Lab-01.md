@@ -10,7 +10,7 @@ In Part 1, we will set up and populate the data in the database, as well as the 
 
 1. On the Azure Portal landing page, search for Resource Groups and select Resource Groups from the list.
 
-  ![](Images\L1-S1)
+  ![](Images/L1-S1.png)
 
 1. Select the Azure PostgreSQL Database Instance. 
 
