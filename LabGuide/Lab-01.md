@@ -10,45 +10,63 @@ In Part 1, we will set up and populate the data in the database, as well as the 
 
 1. On the Azure Portal landing page, search for Resource Groups and select Resource Groups from the list.
 
-  ![](Images/L1-S1.png)
+   ![](Images/L1-S1.png)
 
-1. Select the Azure PostgreSQL Database Instance. 
+1. Select SKAgents<inject key="Deployment ID" enableCopy="false"/> Resource group.
 
-1. Click on the 
+   ![](Images/L1-S2.png)
 
-1. Go to your Desktop and Double click the VS Code icon to Open VS Code on your Lab VM
+1. Verify that the Azure Open AI and Azure Database for PostgreSQL flexible server have been created. Select the PostgreSQL Flexible Server instance.
 
-  	!IMAGE[vscode-icon.jpg](instructions291546/vscode-icon.jpg)
+   ![](Images/L1-S3.png)
 
-1. Once inside VS Code, click the Elephant Icon on the left navigation
+1. From the left panel, select  Authentication under Security. Verify that the Authentication method is set to Microsoft Authentication Method only. Click on Add Microsoft Entra Administrators.
 
-  	!IMAGE[vs-code-elephant.jpg](instructions291546/vs-code-elephant.jpg)
+   ![](Images/L1-S4.png)
 
-1. Once the extension loads, click the "Add Connection" button in the "POSTGRESQL" panel
+1. In the window that appears, search for <inject key="AzureAdUserEmail"></inject> and select checkbox and click on Select. 
 
-  	!IMAGE[vscode-add-conn.jpg](instructions291546/vscode-add-conn.jpg)
+   ![](Images/L1-S5.png)
+
+1. Review that the <inject key="AzureAdUserEmail"></inject> has been selected and click on Save. 
+
+   ![](Images/L1-S6.png)
+
+1. Wait until the deployment gets completed. 
+
+   ![](Images/L1-S7.png)
+
+1. On your LabVM Desktop, Double click the VS Code icon to Open VS Code. 
+
+1. Once inside VS Code, click the Elephant Icon on the left navigation. Once the extension loads, click the "Add Connection" button in the "POSTGRESQL" panel
+
+   ![](Images/L1-S8.png)
 
 1. Select the input type option as "Browse Azure".
 
+    ![](Images/L1-S9.png)
+
 1. This will prompt a popup to ask to login to Azure, click "Allow"
 
-	!IMAGE[vscode-add-conn-dialog.jpg](instructions291546/vscode-add-conn-dialog.jpg)
+    ![](Images/L1-S10.png)
 
 1. Login with your Lab Credentials
-    - Username: +++@lab.CloudPortalCredential(User1).Username+++
-    - Password: +++@lab.CloudPortalCredential(User1).Password+++
 
-	!IMAGE[vscode-ext-login.jpg](instructions291546/vscode-ext-login.jpg)
+    - Username: <inject key="AzureAdUserEmail"></inject>
 
+      ![](Images/L1-S11.png)
+
+    - Password: <inject key="AzureAdUserPassword"></inject>
+
+      ![](Images/L1-S12.png)
 
 1. Click "Yes, all apps"
 
-	!IMAGE[vscode-yes-all-apps.jpg](instructions291546/vscode-yes-all-apps.jpg)
+    ![](Images/L1-S13.png)
 
 1. Click "Done"
 
-	!IMAGE[vscode-done.jpg](instructions291546/vscode-done.jpg)
-
+   ![](Images/L1-S14.png)
 
 1. Back on the "Connection Dialog", for each of the options, click each drop down and select the following options:
     1. Subscription: Select the only option provided
@@ -58,34 +76,28 @@ In Part 1, we will set up and populate the data in the database, as well as the 
     5. Database: Select `cases`
     6. Authentication Type: Entra Auth
 
-1. Click "Add Entra ID"
+   ![](Images/L1-S15.png)
 
-	!IMAGE[vscode-add-entra.jpg](instructions291546/vscode-add-entra.jpg)
+1. Continue to Fill the Following Options on the "Connection Dialog"
 
-1. Select your previously logged in Lab Account:
+   1. Click **"Add Entra ID"**.
+   2. Select your previously logged-in **Lab Account**. Once the confirmation window appears, close the browser tab.
+   3. Ensure your Lab account is now selected as the **"Azure Account"**.
+   4. Enter the **Connection Name** as `lab`.
+   5. Leave the **Server Group** to the default value.
+   6. Click **"Test Connection"** to verify connectivity.
+   7. Click **"Connect"** to finalize the connection.
 
-	!IMAGE[vscode-entra-login.jpg](instructions291546/vscode-entra-login.jpg)
-
-1. Close the confirmation window that appears
-
-	!IMAGE[vscode-entra-login-confirm.jpg](instructions291546/vscode-entra-login-confirm.jpg)
-
-1. Back on the "Connection Dialog", you should see your Lab account selected as the "Azure Account".
-
-1. Enter the Connection name as "lab". 
-
-1. Next, click "Test Connection" to ensure you are connected to the database.
-
-1. Finally, click "Connect" to connect into the database
-
-   !IMAGE[vscode-connect.jpg](instructions291546/vscode-connect.jpg)
-   
    - **Note:** Wait for sometime for the connection to establish
- 
+
+   ![](Images/L1-S18.png)
+   
 
 ## Task 3: Launch PSQL Command Line Shell in VS Code
 
-1. Click on Files from the top left corner and select Select Folder. 
+1. Click on Files from the top left corner and select Select Folder.
+
+   ![](Images/L1-S19.png) 
 
 1. Navigate to `C:\LabFiles` and select the `pg-sk-agents-lab` folder.
 
