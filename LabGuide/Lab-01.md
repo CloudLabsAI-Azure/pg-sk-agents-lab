@@ -107,7 +107,36 @@ In Part 1, we will set up and populate the data in the database, as well as the 
 
    ![](Images/L1-S21.png)
 
-1. Click on the Elephant icon from the left. Expand the connection `lab`. 
+1. Expand Scripts folder and open get_env.ps1
+
+1. Update the Resource Group name as SKAgents<inject key="Deployment ID" enableCopy="false"/> and save the file.
+
+1. Minimise the VS Code and On the Lab VM , Search Powershell in the Search bar  and select Powershell. 
+
+   ![](Images/L1-S30.png) 
+
+1. Execute the below command to login into Azure. 
+
+   ```
+   az login
+   ```
+
+1. On the window that appears, select the azure account that was used to login earlier.
+
+1. Back on the terminal, select the default subscription that appears. Type 1 and enter.  
+
+1. Execute the command `cd C:\LabFiles\pg-sk-agents-lab\scripts\` to navigate to the scripts folder.
+
+   ![](Images/L1-S30.png)
+
+1. Execute the following command to run the script to fetch details.
+
+   ```
+   .\get_env.ps1
+   ```
+1. Copy the values for `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad for further use and close the terminal. 
+
+1. Maximize the VS code. Click on the Elephant icon from the left. Expand the connection `lab`. 
    - Note: If a pop appears asking you to signin, select the previously logged in Lab Account and close the browser tab once logged in.
 
    ![](Images/L1-S22.png)
@@ -153,16 +182,8 @@ In Part 1, we will set up and populate the data in the database, as well as the 
    ```
    ![](Images/L1-S29.png)  
 
-1. Search Powershell in the Search bar of your LabVM and select Powershell. 
-1. Execute the command `cd C:\LabFiles\pg-sk-agents-lab\scripts\` to navigate to the scripts folder.
-1. Execute the following command to run the script to fetch details.
-
-   ```
-   .\get_env.ps1
-   ```
-1. Copy the values for `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad. 
-
-1. Go back to VS Code and the PSQL Command Shell, then use the commands below to add your values to the configuration table. Ensure to replace {AZURE_OPENAI_ENDPOINT} and {AZURE_OPENAI_KEY} tokens with the values you copied in the earlier step.
+ 
+1. Execute the commands below to add values to the configuration table. Ensure to replace {AZURE_OPENAI_ENDPOINT} and {AZURE_OPENAI_KEY} tokens with the values you copied in the earlier step.
 
    ```
    SELECT azure_ai.set_setting('azure_openai.endpoint', '{AZURE_OPENAI_ENDPOINT}');
@@ -170,6 +191,7 @@ In Part 1, we will set up and populate the data in the database, as well as the 
    ```
    SELECT azure_ai.set_setting('azure_openai.subscription_key', '{AZURE_OPENAI_KEY}');
    ``` 
+   ![](Images/L1-S30.png)     
 
 1. Verify the settings written into the azure_ai.settings table using the following queries:
 
@@ -181,11 +203,14 @@ In Part 1, we will set up and populate the data in the database, as well as the 
    SELECT azure_ai.get_setting('azure_openai.subscription_key');
    ```   
 
+   ![](Images/L1-S31.png)    
+
 1. Run the following query, which creates a vector embedding for a sample query. The **deployment_name** parameter in the function is set to **embedding**, which is the name of the deployment of the **text-embedding-3-small** model in your Azure OpenAI service:
 
    ```
    SELECT LEFT(azure_openai.create_embeddings('text-embedding-3-small', 'Sample text for PostgreSQL Lab')::text, 100) AS vector_preview;
    ```
+   ![](Images/L1-S32.png)      
 
 ## Task 3 - Using AI-driven features in Postgres
 
@@ -193,25 +218,27 @@ In this section, we will explore how to leverage AI-driven features within Postg
 
 1. On the VS Code, expand the Databases Node, and Right Click on `cases` database, select `New Query` option.
 
+   ![](Images/L1-S33.png) 
 
 1. This will open a new query editor window like below. Notice on the bottom right, you can see a green circle indicating you are successfully connected to cases database.
 
-1. Enter the following SQL query below in the query editor to run a test query.
+1. Enter the following SQL query below in the query editor to run a test query. Click the green play ">" icon in the top right tool bar. Notice the results open in PostgreSQL Query Results panel.
 
    ```
    SELECT NAME FROM CASES LIMIT 5;
-   ```   
-    
-1. Next click the green play ">" icon in the top right tool bar. Notice the results open in PostgreSQL Query Results panel.
-    
+   ``` 
 
-1. We will start by searching for cases mentioning `"Water leaking into the apartment from the floor above."` to perform case-insensitive searches within text fields.
+   ![](Images/L1-S34.png)  
+
+1. We will start by searching for cases mentioning `"Water leaking into the apartment from the floor above."` to perform case-insensitive searches within text fields. Paste the below query in the query editor and run the query. 
 
    ```
    SELECT id, name, opinion
    FROM cases
    WHERE opinion ILIKE '%Water leaking into the apartment from the floor above';
    ```
+   ![](Images/L1-S34.png) 
+
    > Note: It does not find any results because those *exact* words are not mentioned in the opinion. As you can see there are no results for what to user wants to find. We need to try another approach.
 
 
@@ -225,12 +252,15 @@ Now that we have some sample data, it's time to generate and store the embedding
     ```sql
     CREATE EXTENSION IF NOT EXISTS vector;
     ```
+   ![](Images/L1-S35.png) 
 
 1. Add the embedding vector column. The <code spellcheck="false">text-embedding-3-small</code> model is configured to return 1,536 dimensions, so use that for the vector column size.
 
     ```sql
     ALTER TABLE cases ADD COLUMN opinions_vector vector(1536);
     ```
+
+   ![](Images/L1-S36.png) 
 
 1. Generate an embedding vector for the opinion of each case by calling Azure OpenAI through the create_embeddings user-defined function, which is implemented by the azure_ai extension:
 
@@ -239,6 +269,7 @@ Now that we have some sample data, it's time to generate and store the embedding
     SET opinions_vector = azure_openai.create_embeddings('text-embedding-3-small',  name || LEFT(opinion, 8000), max_attempts => 5, retry_delay_ms => 500)::vector
     WHERE opinions_vector IS NULL;
     ```
+   ![](Images/L1-S37.png) 
 
     >Note: This may take several minutes to run.
 
@@ -247,11 +278,15 @@ Now that we have some sample data, it's time to generate and store the embedding
     ```sql
     CREATE EXTENSION IF NOT EXISTS pg_diskann;
     ```
+
+   ![](Images/L1-S38.png) 
+
 1. Create the diskann index on a table column that contains vector data. As you scale your data to millions of rows, DiskANN makes vector search more efficient.
 
     ```sql
     CREATE INDEX cases_cosine_diskann ON cases USING diskann(opinions_vector vector_cosine_ops);
     ```
+   ![](Images/L1-S39.png) 
 
 1. See an example vector by running the below query.The output will take up alot of your screen, just hit enter to move down the page to see all of the output:
 
@@ -259,6 +294,8 @@ Now that we have some sample data, it's time to generate and store the embedding
     SELECT opinions_vector FROM cases LIMIT 1;
     ```
     >Note: The output will take up alot of your screen, just hit enter to move down the page to see all of the output
+
+   ![](Images/L1-S40.png) 
 
 ## Task 5: Perform a Semantic Search Query
 
@@ -270,6 +307,8 @@ Now that you have listing data augmented with embedding vectors, it's time to ru
     SELECT azure_openai.create_embeddings('text-embedding-3-small', 'Water leaking into the apartment from the floor above.');
     ```
 
+   ![](Images/L1-S41.png) 
+
 2. Use the embedding in a cosine search, fetching the top 10 most similar cases to the query.
 
     ```sql
@@ -278,6 +317,8 @@ Now that you have listing data augmented with embedding vectors, it's time to ru
     ORDER BY opinions_vector <=> azure_openai.create_embeddings('text-embedding-3-small', 'Water leaking into the apartment from the floor above.')::vector 
     LIMIT 10;
     ```
+
+   ![](Images/L1-S42.png) 
 
 3. You may also project the <code spellcheck="false">opinion</code> column to be able to read the text of the matching rows whose opinions were semantically similar. For example, this query returns the best match:
 
@@ -288,3 +329,4 @@ Now that you have listing data augmented with embedding vectors, it's time to ru
     LIMIT 1;
     ```
 
+   ![](Images/L1-S43.png) 
