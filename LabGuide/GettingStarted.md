@@ -12,35 +12,40 @@ The lab begins by setting up a data environment and configuring Azure AI extensi
 
 By the end of this lab, you will be able to:
 
-- **Lab1**: we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. Part 2 explores how to perform text searches using pattern matching, and demonstrates in practice how this can be significantly improved by relying on semantic vector search and vector indexes
-- lAB 2: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
+- **Lab 1**: we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. We will also explore how to perform text searches using pattern matching, and demonstrate in practice how this can be significantly improved by relying on semantic vector search and vector indexes.
+
+- **Lab 2**: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
 
 ## Prerequisites
 
 Participants should have:
 
-- Basic understanding of Azure services such as Azure OpenAI, and models.
-- Experience with deploying applications using Azure Developer CLI (AZD).
+- Basic understanding of Azure services such as Azure OpenAI and models.
+- Basic familiarity with PostgreSQL database concepts and operations.
 
+## Architecture
 
-## Explanation of Components
+This architecture represents an agent-driven application workflow designed to build an intelligent agent that retrieves knowledge graph information from a dataset and enriches it with AI-generated insights. Developers build and manage the app using Visual Studio Code and Jupyter Notebooks. User prompts are processed through the Semantic Kernel framework to generate vector embeddings and execute structured tools. These embeddings enable hybrid semantic searches through a PostgreSQL database extended with graph capabilities. Azure OpenAI enhances the retrieved data with contextual reasoning, while semantic re-ranking ensures the most relevant, connected information is presented to the user.
 
-Semantic Kernel is an open-source SDK developed by Microsoft that helps developers create advanced AI agents by combining:
+## Architecture Diagram
 
-LLMs (Large Language Models) like OpenAI's GPT models
-Plugins (custom tools and functions the agent can call)
-Memory (saving and recalling past conversations or facts)
-An Agent in Semantic Kernel is a smart assistant that can:
+![](./images/Architecture.png)
 
-Respond to user prompts
-Decide which plugin functions to call
-Use external knowledge sources like databases or APIs
-Build better, grounded answers by combining model reasoning with real-world data
-You are about to connect powerful components:
+### Explanation of Components
 
-Azure OpenAI (for embeddings and LLM chat completions)
-PostgreSQL with Vector and Graph extensions (for fast semantic and graph search)
-APIs for real-world data (historical weather evidence)
+### Explanation of Components
+
+- **Visual Studio Code & Jupyter Notebook:** Developer environments for building, testing, and managing AI agents, Semantic Kernel configurations, and code integrations.
+- **Code Base:** Contains the agent logic, plugin definitions, AI workflows, and configurations that orchestrate interactions between Semantic Kernel, databases, and external APIs.
+- **Meteo Weather Web Service:** Example of a real-world API that the agent can query via a Semantic Kernel plugin function, demonstrating tool usage within an agent’s reasoning workflow.
+- **Semantic Kernel Agent / Tools Framework:** The orchestration layer managing AI agents that can respond to user prompts, decide which plugin functions to call, access databases/APIs, and combine LLM reasoning with real-world data for grounded, reliable answers.
+- **Generate Embedding of User Prompt:** Converts user input into vector embeddings using Azure OpenAI, enabling high-dimensional semantic search capabilities within the database.
+- **Hybrid Search based on Semantic Kernel Tool:** Performs both keyword-based and vector-based semantic searches, combining results for improved relevance using vector and graph indexes in PostgreSQL.
+- **Azure OpenAI:** Provides LLM services for generating embeddings and AI chat completions, enabling agents to reason over retrieved data and produce contextually rich, coherent responses.
+- **Semantic Re-ranking Cross Encoder:** Reorders retrieved results by evaluating their semantic similarity to the original user query, refining search output before generating the final AI response.
+- **Azure PostgreSQL Graph & Relational Database:** Stores structured data alongside graph-based relationships using Apache AGE, enabling both relational queries and graph traversals for knowledge graph retrieval.
+- **Azure AI Extension:** Extends PostgreSQL with vector search and DiskANN indexing, enabling fast, scalable, high-dimensional semantic search directly within the database.
+
 
 ## Getting Started with the lab
 
@@ -79,20 +84,6 @@ For convenience, you can open the lab guide in a separate window by selecting th
 Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
 ![Manage Your Virtual Machine](./media/agg5.png)
-
-<!-- ## Lab Duration Extension
-
-1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment.
-
-    ![Manage Your Virtual Machine](./media/media/gext.png)
-
-    >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
-
-2. Click **OK** to extend your lab duration.
-
-   ![Manage Your Virtual Machine](./media/media/gext2.png)
-
-3. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed. -->
 
 > **Note:** Please ensure the script continues to run and is not terminated after accessing the environment.
 
