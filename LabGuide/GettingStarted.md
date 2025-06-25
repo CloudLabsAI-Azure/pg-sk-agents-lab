@@ -29,7 +29,7 @@ This architecture represents an agent-driven application workflow designed to bu
 
 ## Architecture Diagram
 
-![](./images/Architecture.png)
+![](./Images/Architecture.png)
 
 ### Explanation of Components
 
