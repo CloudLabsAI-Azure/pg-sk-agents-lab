@@ -4,21 +4,16 @@
 
 ## Overview
 
-Large-Language Models (LLMs) enhance applications with semantic capabilities, such as natural language search. This lab will guide you to develop an agent-driven, Retrieval-Augmented Generation (RAG) application to explore the U.S. Case Law dataset for factual information.
-You will gain hands-on experience in building an agent-based app using Azure Database for PostgreSQL, Visual Studio Code, and the Semantic Kernel Agent Framework. This course will not only cover these technologies but also delve into AI and information retrieval techniques in practice, such as database vectors for (LLMs) and the DiskANN index for vector search. Additionally, you will learn how to integrate the GraphRAG pattern using Apache AGE for PostgreSQL, an extension that adds graph database functionality to PostgreSQL, leveraging the Semantic Kernel Agent Framework.
+Large Language Models (LLMs) enhance modern applications with advanced semantic capabilities, enabling natural language understanding and contextual search. This lab focuses on building an agent-driven Retrieval-Augmented Generation (RAG) application that explores a U.S. Case Law dataset to retrieve factual information. You’ll work with Azure Database for PostgreSQL, Visual Studio Code, and the Semantic Kernel Agent Framework, while applying practical AI and information retrieval techniques such as using vector embeddings within databases and implementing the DiskANN index for fast, high-dimensional vector search.
 
-You can take a look at the application's architecture in the following diagram:
-
-
-In Part 1, we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. Part 2 explores how to perform text searches using pattern matching, and demonstrates in practice how this can be significantly improved by relying on semantic vector search and vector indexes. In Part 3, we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
-
-Login to your VM with the following credentials...
+The lab begins by setting up a data environment and configuring Azure AI extensions before moving into text search using pattern matching. It then introduces semantic vector search, showing how vector indexes dramatically improve search accuracy and relevance. Building on this, the lab incorporates the GraphRAG pattern using Apache AGE, adding graph database functionality to PostgreSQL. This integration enables agents to query both structured and graph-based data, enriching results with interconnected knowledge extracted from relationships within the dataset.
 
 ## Objective 
 
 By the end of this lab, you will be able to:
 
-- **Multi-Agent Business Persona Workflow**: Experience a collaborative workflow involving three distinct personas—Software Engineer, Product Owner, and User. The Software Engineer writes and submits code, the Product Owner reviews and approves the changes, and upon approval, the solution is automatically pushed to GitHub for deployment and version control.
+- **Lab1**: we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. Part 2 explores how to perform text searches using pattern matching, and demonstrates in practice how this can be significantly improved by relying on semantic vector search and vector indexes
+- lAB 2: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
 
 ## Prerequisites
 
@@ -26,7 +21,7 @@ Participants should have:
 
 - Basic understanding of Azure services such as Azure OpenAI, and models.
 - Experience with deploying applications using Azure Developer CLI (AZD).
-- Exposure to conversational AI tools like Streamlit or similar frameworks.
+
 
 ## Explanation of Components
 
