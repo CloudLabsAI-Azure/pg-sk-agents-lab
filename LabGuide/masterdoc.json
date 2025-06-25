@@ -1,1 +1,20 @@
-
+[
+    {
+        "Name": "PostgreSQL and SK agent Lab",
+        "Language": "English",
+        "Files": [
+          {
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/pg-sk-agents-lab/refs/heads/prod/LabGuide/GettingStarted.md",
+            "Order": 1
+          },
+          {
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/pg-sk-agents-lab/refs/heads/prod/LabGuide/Lab-01.md",
+            "Order": 2
+          },
+          {
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/pg-sk-agents-lab/refs/heads/prod/LabGuide/Lab-02.md",
+            "Order": 3
+          }
+        ]
+    }
+]
