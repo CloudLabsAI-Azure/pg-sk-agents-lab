@@ -64,30 +64,31 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
 
     ![](Images/L1-S13.png)
 
-1. Click "Done".
+1. Click **"Done"**.
 
    ![](Images/L1-S14.png)
 
 1. Back on the "Connection Dialog", for each of the options, click each drop down and select the following options:
-    1. Subscription: Select the **default Subscription provided (1)**.
-    2. Resource Group: Select the **default RG provided (2)**.
-    3. Location: Select the **default location (3)**.
-    4. Server: Keep the default that was selected (4).
-    5. Database: Select **cases (5)**.
-    6. Authentication Type: Select **Entra Auth (6)**.
+    - Subscription: Select the **default Subscription provided (1)**.
+    - Resource Group: Select the **default RG provided (2)**.
+    - Location: Select the **default location (3)**.
+    - Server: Keep the default that was selected (4).
+    - Database: Select **cases (5)**.
+    - Authentication Type: Select **Entra Auth (6)**.
 
    ![](Images/L1-S15.png)
 
 1. Continue to Fill the Following options on the "Connection Dialog"
 
-   1. Click **Add Entra ID (1)**.
-   2. Select your previously logged-in **Azure Account**. Once the confirmation window appears, close the browser tab.
-   3. Ensure your Lab account is now selected as the **"Azure Account"**.
-   4. Enter the **Connection Name** as **lab (2)**.
-   5. Leave the **Server Group (3)** to the default value.
-   6. Click **Test Connection (4)** to verify connectivity.
-   7. Click **Save and Connect (5)** to finalize the connection.
-      - **Note:** Wait for sometime for the connection to establish
+    - Click **Add Entra ID (1)**.
+    - Select your previously logged-in **Azure Account**. Once the confirmation window appears, close the browser tab.
+    - Ensure your Lab account is now selected as the **"Azure Account"**.
+    - Enter the **Connection Name** as **lab (2)**.
+    - Leave the **Server Group (3)** to the default value.
+    - Click **Test Connection (4)** to verify connectivity.
+    - Click **Save and Connect (5)** to finalize the connection.
+
+      - **Note:** Wait for sometime for the connection to establish.
 
    ![](Images/L1-S18.png)
    
@@ -141,7 +142,7 @@ In this task, you initialize the database with sample tables and data, configure
    ```
    .\get_env.ps1
    ```
-1. Copy the values of `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad for further use and close the terminal. 
+1. Copy the values of `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad for further use and close the terminal, please see the below screenshot for reference.
 
    ![](Images/E1-S49.png)
 
@@ -150,7 +151,7 @@ In this task, you initialize the database with sample tables and data, configure
 
    ![](Images/L1-S22.png)
 
-1. In the **Object Explorer panel** at the top left of the screen, expand the **Databases(1)** node. Right-click the database named **Cases(2)** and select the option **Connect with PSQL(3)**.
+1. In the **Object Explorer panel** at the top left of the screen, expand the **Databases(1)** node. Right-click the database named **cases(2)** and select the option **Connect with PSQL(3)**.
 
    ![](Images/L1-S23.png)
 
@@ -245,7 +246,7 @@ In this task, you will explore how to leverage **AI-driven features within Postg
    FROM cases
    WHERE opinion ILIKE '%Water leaking into the apartment from the floor above';
    ```
-   ![](Images/L1-S34.png) 
+   ![](Images/L1-S35.png) 
 
    > Note: It does not return any results because those exact words are not mentioned in the opinion. As you can see, there are no results for what the user wants to find.
 
@@ -259,7 +260,7 @@ Now that we have some sample data, it's time to generate and store the embedding
     ```sql
     CREATE EXTENSION IF NOT EXISTS vector;
     ```
-   ![](Images/L1-S35.png) 
+   ![](Images/create_extension.png) 
 
 1. Add the **embedding vector column**. The `<code spellcheck="false">text-embedding-3-small</code>` model is configured to return **1,536 dimensions**, so use that for the vector column size. Paste the **query(1)** below into the **query editor** and run the **query(2)**.
 
@@ -342,9 +343,9 @@ In this task, we will use the existing data augmented with embedding vectors to 
 
 In this lab, you have accomplished the following:
 
-- Established connectivity from VS Code to the PostgreSQL Flexible server.
+- Established connectivity from VS Code to the Azure PostgreSQL Flexible server.
 - Launched and ran commands on PSQL Command Line Shell
-- Ran a semantic search query
+- Ran Semantic Search Query
 
 ## You have successfully finished the lab. Click Next to continue to the next lab.
 
