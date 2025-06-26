@@ -2,13 +2,13 @@
 
 This lab focuses on establishing a connection between Visual Studio Code and a PostgreSQL database, launching the PSQL command-line shell, and integrating AI-driven semantic search capabilities. It involves configuring Azure AI extensions, generating and storing embedding vectors using the Azure OpenAI embedding API, and implementing semantic vector search with the DiskANN index for high-performance similarity queries. The lab demonstrates how to enhance traditional text search with advanced semantic search techniques and prepares data environments for agent-based AI applications by combining structured data, vector embeddings, and AI-powered search queries within PostgreSQL.
 
-## Task 1 : Setup your Azure PostgreSQL Database for your Agentic App
+## Task 1: Setup your Azure PostgreSQL Database
 
-1. On the Azure Portal landing page, search for Resource Groups and select Resource Groups from the list.
+1. On the Azure portal home page, search for **Resource groups(1)** in the search bar and select **Resource groups(2)** from the results.
 
    ![](Images/L1-S1.png)
 
-1. Select SKAgents-<inject key="Deployment ID" enableCopy="false"/> Resource group.
+1. Select the **SKAgents-<inject key="Deployment ID" enableCopy="false"/>** resource group.
 
    ![](Images/L1-S2.png)
 
@@ -217,7 +217,7 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
    ```
    ![](Images/L1-S32.png)      
 
-## Task 3 - Using AI-driven features in Postgres
+## Task 3: Using AI-driven features in Postgres
 
 In this section, we will explore how to leverage AI-driven features within PostgreSQL to enhance data processing and analysis. These features can help automate tasks, improve data insights, and provide advanced functionalities that traditional SQL queries may not offer.
 
