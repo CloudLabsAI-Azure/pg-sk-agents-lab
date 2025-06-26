@@ -14,7 +14,7 @@ By the end of this lab, you will be able to:
 
 - **Lab 1**: we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. We will also explore how to perform text searches using pattern matching, and demonstrate in practice how this can be significantly improved by relying on semantic vector search and vector indexes.
 
-- **Lab 2**: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
+- **Build the Agentic App**: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
 
 ## Prerequisites
 
