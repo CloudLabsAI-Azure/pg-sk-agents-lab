@@ -132,8 +132,6 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
    cd C:\LabFiles\pg-sk-agents-lab\scripts\
    ```
    
-   ![](Images/L1-S30.png)
-
 1. Execute the following command to run the script to fetch details.
 
    ```
@@ -227,7 +225,7 @@ In this section, we will explore how to leverage AI-driven features within Postg
 
    ![](Images/L1-S33.png) 
 
-1. This will open a new query editor window like below. Notice on the bottom right, you can see a green circle indicating you are successfully connected to cases database.
+1. This will open a new query editor window. Notice on the bottom right, you can see a green circle indicating you are successfully connected to cases database.
 
 1. Enter the following SQL query below in the query editor to run a test query. Click the green play ">" icon in the top right tool bar. Notice the results open in PostgreSQL Query Results panel.
 
@@ -337,3 +335,14 @@ Now that you have listing data augmented with embedding vectors, it's time to ru
     ```
 
    ![](Images/L1-S43.png) 
+
+## Review
+
+In this lab, you have accomplished the following:
+
+- Established connectivity from VS Code to the PostgreSQL Flexible server.
+- Launched and ran commands on PSQL Command Line Shell
+- Ran a semantic search query
+
+## You have successfully finished the lab. Click Next to continue to the next lab.
+
