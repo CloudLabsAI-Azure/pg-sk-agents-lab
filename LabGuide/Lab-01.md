@@ -14,7 +14,7 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
 
    ![](Images/L1-S2.png)
 
-1. Verify that the Azure Open AI and Azure Database for PostgreSQL flexible server have been created. Select the PostgreSQL Flexible Server instance.
+1. Verify that the Azure OpenAI and Azure Database for PostgreSQL Flexible Server resources have been created. Then, select the PostgreSQL Flexible Server instance.
 
    ![](Images/L1-S3.png)
 
