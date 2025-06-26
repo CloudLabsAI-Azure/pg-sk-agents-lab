@@ -10,11 +10,9 @@ The lab begins by setting up a data environment and configuring Azure AI extensi
 
 ## Objective 
 
-By the end of this lab, you will be able to:
+- **Lab 1 - PostgreSQL Connection and AI Search Integration**: This lab establishes a PostgreSQL connection in VS Code, enables AI-driven semantic search using Azure OpenAI embeddings and DiskANN indexing, and integrates structured data with vector-based search for agent-based AI applications.
 
-- **Lab 1**: we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. We will also explore how to perform text searches using pattern matching, and demonstrate in practice how this can be significantly improved by relying on semantic vector search and vector indexes.
-
-- **Build the Agentic App**: we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
+- **Lab 2 - Build a Semantic Kernel Agentic**: This lab involves building a Semantic Kernel Agentic app in a Python Jupyter Notebook using VS Code, enabling the agent to reason over a legal cases database, integrate external web data, and utilize memory for improved responses over time.
 
 ## Prerequisites
 
@@ -46,7 +44,7 @@ This architecture represents an agent-driven application workflow designed to bu
 
 ## Getting Started with the lab
 
-Welcome to your Azure Agentic AI Workshop, Let's begin by making the most of this experience:
+Welcome to your Postgre SQL and SK Agents Lab Workshop, Let's begin by making the most of this experience.
 
 ## Accessing Your Lab Environment
 
@@ -54,7 +52,7 @@ Once you're ready to dive in, your virtual machine and **Guide** will be right a
 
 ![Access Your VM and Lab Guide](./Images/LabVM.png)
 
-> **NOTE**:**Please make sure to minimize the PowerShell terminal window after accessing the environment so the script continues to run in the background without interruption.**
+> **NOTE**: **If you see a PowerShell window running, please minimize it after accessing the environment to ensure the script continues to run in the background without interruption.**
 
 ## Lab Guide Zoom In/Zoom Out
 
@@ -87,6 +85,9 @@ Feel free to **start, stop, or restart** your virtual machine as needed from the
 ## Let's Get Started with Azure Portal
 
 1. On your virtual machine, click on the Azure Portal icon.
+
+![azure portal desktop icon](./Images/portal.png)
+
 2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
