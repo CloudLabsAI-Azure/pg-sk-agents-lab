@@ -4,6 +4,8 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
 
 ## Task 1: Setup your Azure PostgreSQL Database
 
+In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code using Entra ID authentication. This includes assigning an administrator and configuring a secure database connection through the VS Code PostgreSQL extension.
+
 1. On the Azure portal home page, search for **Resource groups(1)** in the search bar and select **Resource groups(2)** from the results.
 
    ![](Images/L1-S1.png)
