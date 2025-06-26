@@ -139,7 +139,7 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
    ```
 1. Copy the values for `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad for further use and close the terminal. 
 
-   ![](Images/E1-S48.png)
+   ![](Images/E1-S49.png)
 
 1. Maximize the VS code. Click on the Elephant icon from the left. Expand the connection `lab`. 
    - Note: If a pop appears asking you to signin, select the previously logged in Azure Account and close the browser tab once logged in.
