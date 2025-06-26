@@ -33,8 +33,6 @@ This architecture represents an agent-driven application workflow designed to bu
 
 ### Explanation of Components
 
-### Explanation of Components
-
 - **Visual Studio Code & Jupyter Notebook:** Developer environments for building, testing, and managing AI agents, Semantic Kernel configurations, and code integrations.
 - **Code Base:** Contains the agent logic, plugin definitions, AI workflows, and configurations that orchestrate interactions between Semantic Kernel, databases, and external APIs.
 - **Meteo Weather Web Service:** Example of a real-world API that the agent can query via a Semantic Kernel plugin function, demonstrating tool usage within an agent’s reasoning workflow.
@@ -46,7 +44,6 @@ This architecture represents an agent-driven application workflow designed to bu
 - **Azure PostgreSQL Graph & Relational Database:** Stores structured data alongside graph-based relationships using Apache AGE, enabling both relational queries and graph traversals for knowledge graph retrieval.
 - **Azure AI Extension:** Extends PostgreSQL with vector search and DiskANN indexing, enabling fast, scalable, high-dimensional semantic search directly within the database.
 
-
 ## Getting Started with the lab
 
 Welcome to your Azure Agentic AI Workshop, Let's begin by making the most of this experience:
@@ -55,13 +52,15 @@ Welcome to your Azure Agentic AI Workshop, Let's begin by making the most of thi
 
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
 
-![Access Your VM and Lab Guide](./media/VmImage.png)
+![Access Your VM and Lab Guide](./media/LabVM.png)
+
+> **NOTE**:**Please make sure to minimize the PowerShell terminal window after accessing the environment so the script continues to run in the background without interruption.**
 
 ## Lab Guide Zoom In/Zoom Out
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-![](./media/agg2.png)
+![](./media/ZoomIn.png)
 
 ## Virtual Machine & Lab Guide
 
@@ -71,21 +70,19 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
 
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-![Explore Lab Resources](./media/agg3.png)
+![Explore Lab Resources](./media/Environment.png)
 
 ## Utilizing the Split Window Feature
 
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
 
-![Use the Split Window Feature](./media/agg4.png)
+![Use the Split Window Feature](./media/Split.png)
 
 ## Managing Your Virtual Machine
 
 Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-![Manage Your Virtual Machine](./media/agg5.png)
-
-> **Note:** Please ensure the script continues to run and is not terminated after accessing the environment.
+![Manage Your Virtual Machine](./media/Resources.png)
 
 ## Let's Get Started with Azure Portal
 
@@ -94,13 +91,13 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-     ![Enter Your Username](./media/gt-5.png)
+     ![Enter Your Username](./media/UserName.png)
 
 3. Next, provide your password:
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-     ![Enter Your Password](./media/gt-4.png)
+     ![Enter Your Password](./media/Password.png)
 
 4. If **Action required** pop-up window appears, click on **Ask later**.
 5. If prompted to **stay signed in**, you can click **No**.
@@ -140,7 +137,7 @@ Learner Support Contacts:
 
 Click **Next** from the bottom right corner to embark on your Lab journey!
 
-![Start Your Azure Journey](./media/agg6.png)
+![Start Your Azure Journey](./media/PageNo.png)
 
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop!
 
