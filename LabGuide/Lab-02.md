@@ -22,6 +22,8 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
    ![](Images/L2-S24.png)
 
+## You can now proceed with running the `lab.ipynb` file to continue with the lab. If you encounter any confusion, please refer to the lab guide starting from here
+
 1. Run the first cell under **Part 3.2: Setup the Agent App Python imports**. This step imports the necessary modules, preparing the technical foundation for building an AI-powered agent that interacts with a **PostgreSQL database** and **OpenAI services**.
 
    ![](Images/L2-S1.png)
@@ -124,4 +126,10 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 - Added WeatherPlugin to extend agent capability for external data queries.
 - Enabled semantic memory and reassembled the agent with all plugins for final testing.
 
-# You have successfully completed the lab.
+## Reference links
+- https://learn.microsoft.com/en-us/semantic-kernel/overview
+- https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services
+- https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview
+- https://learn.microsoft.com/en-us/azure/ai-services/openai/overview
+
+# You have successfully completed the lab
