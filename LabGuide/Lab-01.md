@@ -8,7 +8,7 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
 
    ![](Images/L1-S1.png)
 
-1. Select SKAgents<inject key="Deployment ID" enableCopy="false"/> Resource group.
+1. Select SKAgents-<inject key="Deployment ID" enableCopy="false"/> Resource group.
 
    ![](Images/L1-S2.png)
 
