@@ -8,12 +8,22 @@ Next, we are going to take everything we have learned so far and now build our A
 
    ![](Images/L2-S0.png)    
 
-1. Kernal Setup
+1. To setup the Kernal, click on kernel and click on Select Another Kernel.
 
-1. Run the first cell under Part 3.2, we are importing necessary..... 
+   ![](Images/L2-S22.png)
+   
+1. Select Python Environments and then select Python 3.10.0. 
+
+   ![](Images/L2-S23.png)
+
+   ![](Images/L2-S24.png)
+
+1. Run the first cell under Part 3.2, we are importing necessary modules.
+
    ![](Images/L2-S1.png)
 
 1. Within VS Code,select the ellipses,select terminal and click on new terminal.
+
     ![](Images/L2-S2.png)
 
  1. On the terminal, execute the below command to fetch the values of AZURE_OPENAI_ENDPOINT AZURE_OPENAI_KEY,DB_CONFIG - HOST and DB_CONFIG - PASSWORD. Copy and paste these values into a notepad.
