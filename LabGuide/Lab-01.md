@@ -103,26 +103,35 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
 
    ![](Images/L1-S21.png)
 
-1. Expand Scripts folder and open get_env.ps1
+1. Expand Scripts folder and open get_env.ps1. Update the Resource Group name as SKAgents-<inject key="Deployment ID" enableCopy="false"/> and save the file.
 
-1. Update the Resource Group name as SKAgents<inject key="Deployment ID" enableCopy="false"/> and save the file.
+   ![](Images/E1-S45.png)
 
-1. Minimise the VS Code and On the Lab VM , Search Powershell in the Search bar  and select Powershell. 
+1. Minimise the VS Code and On the Lab VM , Search Powershell in the Search bar and select Powershell. 
 
-   ![](Images/L1-S30.png) 
+   ![](Images/E1-S44.png) 
 
 1. Execute the below command to login into Azure. 
 
    ```
    az login
    ```
+   ![](Images/E1-S46.png)
 
 1. On the window that appears, select the azure account that was used to login earlier.
 
-1. Back on the terminal, select the default subscription that appears. Type 1 and enter.  
+   ![](Images/E1-S47.png)
 
-1. Execute the command `cd C:\LabFiles\pg-sk-agents-lab\scripts\` to navigate to the scripts folder.
+1. Back on the terminal, type 1 and enter to select the default subscription that appears.
 
+   ![](Images/E1-S48.png)
+
+1. Execute the below command to navigate to the scripts folder.
+  
+   ```
+   cd C:\LabFiles\pg-sk-agents-lab\scripts\
+   ```
+   
    ![](Images/L1-S30.png)
 
 1. Execute the following command to run the script to fetch details.
@@ -132,8 +141,10 @@ This lab focuses on establishing a connection between Visual Studio Code and a P
    ```
 1. Copy the values for `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_KEY` from the output and paste in into a notepad for further use and close the terminal. 
 
+   ![](Images/E1-S48.png)
+
 1. Maximize the VS code. Click on the Elephant icon from the left. Expand the connection `lab`. 
-   - Note: If a pop appears asking you to signin, select the previously logged in Lab Account and close the browser tab once logged in.
+   - Note: If a pop appears asking you to signin, select the previously logged in Azure Account and close the browser tab once logged in.
 
    ![](Images/L1-S22.png)
 
