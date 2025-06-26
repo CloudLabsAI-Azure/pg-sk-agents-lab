@@ -1,12 +1,8 @@
-# Lab 1: PostgreSQL and SK Agents
+# Lab 1 - PostgreSQL Connection and AI Search Integration
 
-Large-Language Models (LLMs) enhance applications with semantic capabilities, such as natural language search. This lab will guide you to develop an agent-driven, Retrieval-Augmented Generation (RAG) application to explore the U.S. Case Law dataset for factual information.
+This lab focuses on establishing a connection between Visual Studio Code and a PostgreSQL database, launching the PSQL command-line shell, and integrating AI-driven semantic search capabilities. It involves configuring Azure AI extensions, generating and storing embedding vectors using the Azure OpenAI embedding API, and implementing semantic vector search with the DiskANN index for high-performance similarity queries. The lab demonstrates how to enhance traditional text search with advanced semantic search techniques and prepares data environments for agent-based AI applications by combining structured data, vector embeddings, and AI-powered search queries within PostgreSQL.
 
-You will gain hands-on experience in building an agent-based app using Azure Database for PostgreSQL, Visual Studio Code, and the Semantic Kernel Agent Framework. This course will not only cover these technologies but also delve into AI and information retrieval techniques in practice, such as database vectors for (LLMs) and the DiskANN index for vector search. Additionally, you will learn how to integrate the GraphRAG pattern using Apache AGE for PostgreSQL, an extension that adds graph database functionality to PostgreSQL, leveraging the Semantic Kernel Agent Framework.
-
-In Part 1, we will set up and populate the data in the database, as well as the Azure AI extension, and test the tools that we will use. Part 2 explores how to perform text searches using pattern matching, and demonstrates in practice how this can be significantly improved by relying on semantic vector search and vector indexes. In Part 3, we delve deeply into creating an agent that uses the GraphRAG pattern, a technique designed to improve the quality of results by extracting knowledge graph information from our data. Let's get started!
-
-## Task 1 - Setup your Azure PostgreSQL Database for your Agentic App
+## Task 1 : Setup your Azure PostgreSQL Database for your Agentic App
 
 1. On the Azure Portal landing page, search for Resource Groups and select Resource Groups from the list.
 
@@ -58,7 +54,7 @@ In Part 1, we will set up and populate the data in the database, as well as the 
 
     - Password: <inject key="AzureAdUserPassword"></inject>
 
-      ![](Images/L1-S12.png)
+      ![](Images/Password.png)
 
 1. Click "Yes, all apps"
 
