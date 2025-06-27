@@ -1,4 +1,4 @@
-# Lab 2 - Build a Semantic Kernel Agentic
+# Lab 2 - Build a Semantic Kernel Agent
 
 ### Estimated time: 120 minutes
 
