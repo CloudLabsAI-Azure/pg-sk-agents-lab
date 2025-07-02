@@ -1,28 +1,77 @@
 -- ===============================================
--- SETUP: Azure OpenAI API Configuration
+-- EXTENSION SETUP (Azure PostgreSQL Flexible Server only)
 -- ===============================================
 
--- Set your Azure OpenAI API key
-SELECT azure_openai.set_setting('azure_openai.api_key', 'YOUR-OPENAI-API-KEY');
-
--- Set your Azure OpenAI resource endpoint (base URL without /openai/deployments)
-SELECT azure_openai.set_setting('azure_openai.resource_endpoint', 'https://YOUR-RESOURCE-NAME.openai.azure.com/');
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS azure_ai;
 
 -- ===============================================
--- DROP FUNCTION IF EXISTS
+-- CONFIGURE AZURE OPENAI SETTINGS
+-- NOTE: You must be a user with the 'azure_ai_settings_manager' role to run these
+-- Replace with your actual values
+-- ===============================================
+
+SELECT azure_ai.set_setting('azure_openai.subscription_key', '');
+SELECT azure_ai.set_setting('azure_openai.endpoint', '');
+
+-- ===============================================
+-- CLEANUP: DROP OLD FUNCTIONS
 -- ===============================================
 
 DROP FUNCTION IF EXISTS semantic_relevance(TEXT, INT);
-DROP FUNCTION IF EXISTS generate_json_pairs(TEXT, INT);  -- optional utility function
+DROP FUNCTION IF EXISTS semantic_relevance_table(TEXT, INT);
+DROP FUNCTION IF EXISTS semantic_relevance_json(TEXT, INT);
+DROP FUNCTION IF EXISTS generate_json_pairs(TEXT, INT);
 
 -- ===============================================
--- FUNCTION: semantic_relevance
--- Purpose: Retrieve top-N most semantically similar cases to a query
--- Returns: JSONB object containing array of ranked cases
+-- FUNCTION: semantic_relevance (Used by Semantic Kernel plugin)
+-- Returns JSONB array of ranked results for re-ranking
 -- ===============================================
 
 CREATE OR REPLACE FUNCTION semantic_relevance(query TEXT, n INT)
 RETURNS jsonb AS $$
+BEGIN
+    RETURN (
+        SELECT jsonb_agg(
+            jsonb_build_object(
+                'id', id,
+                'similarity', opinions_vector <=> azure_openai.create_embeddings('text-embedding-3-small', query)::vector
+            )
+        )
+        FROM (
+            SELECT id, opinions_vector
+            FROM cases
+            ORDER BY opinions_vector <=> azure_openai.create_embeddings('text-embedding-3-small', query)::vector
+            LIMIT n
+        ) subquery
+    );
+END;
+$$ LANGUAGE plpgsql;
+
+-- ===============================================
+-- FUNCTION: semantic_relevance_table (For direct SQL use)
+-- ===============================================
+
+CREATE OR REPLACE FUNCTION semantic_relevance_table(query TEXT, n INT)
+RETURNS TABLE (
+    case_id INT,
+    similarity FLOAT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT id, opinions_vector <=> azure_openai.create_embeddings('text-embedding-3-small', query)::vector AS similarity
+    FROM cases
+    ORDER BY similarity
+    LIMIT n;
+END;
+$$ LANGUAGE plpgsql;
+
+-- ===============================================
+-- FUNCTION: semantic_relevance_json (Optional UI/Debugging)
+-- ===============================================
+
+CREATE OR REPLACE FUNCTION semantic_relevance_json(query TEXT, n INT)
+RETURNS jsonb AS $$ 
 BEGIN
     RETURN (
         SELECT jsonb_build_object(
@@ -42,39 +91,12 @@ BEGIN
             LIMIT n
         ) subquery
     );
-END $$ LANGUAGE plpgsql;
+END;
+$$ LANGUAGE plpgsql;
 
 -- ===============================================
--- FUNCTION: generate_json_pairs (Optional)
--- Useful for debugging or reranker training
--- ===============================================
-
-CREATE OR REPLACE FUNCTION generate_json_pairs(query TEXT, n INT)
-RETURNS jsonb AS $$
-BEGIN
-    RETURN (
-        SELECT jsonb_build_object(
-            'pairs', 
-            jsonb_agg(
-                jsonb_build_array(query, LEFT(opinion, 800))
-            )
-        )
-        FROM (
-            SELECT opinion
-            FROM cases
-            ORDER BY opinions_vector <=> azure_openai.create_embeddings('text-embedding-3-small', query)::vector
-            LIMIT n
-        ) subquery
-    );
-END $$ LANGUAGE plpgsql;
-
--- ===============================================
--- SAMPLE USAGE
--- ===============================================
-
--- Get 5 most relevant cases for the query
--- SELECT * FROM jsonb_array_elements(semantic_relevance('water leak in ceiling', 5)->'results') AS elem;
-
--- ===============================================
--- END OF FILE
+-- SAMPLE USAGE:
+-- SELECT * FROM jsonb_array_elements(semantic_relevance('water leak', 5));
+-- SELECT * FROM semantic_relevance_table('water leak', 5);
+-- SELECT * FROM semantic_relevance_json('water leak', 5);
 -- ===============================================
