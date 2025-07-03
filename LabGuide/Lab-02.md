@@ -16,7 +16,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
    ![](Images/L2-S22.png)
    
-2. Select **Python Environments** and then choose **Python 3.10.0**.
+1. Select **Python Environments** and then choose **Python 3.10.0**.
 
    ![](Images/L2-S23.png)
 
@@ -70,7 +70,9 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 1. Run the cell under **Part 3.6: Improve Agent Accuracy by Adding Semantic Re-ranking Query Plugin**. In this step, we add a new plugin called **SemanticRerankingPlugin** to increase the precision of our agent’s search results.
 
-    ![](Images/L2-S9.png)
+   ![](Images/L2-S9.png)
+
+   >**Note:** This cell might take 5-6 mins to run. 
 
 1. In **VS Code**, in the folder structure, expand the folder **Scripts(1)**, open the **create_graph.sql(2)** file, press **CTRL+SHIFT+C** to open the **VS Code action panel**, and select the connection named **lab(3)** that you created in the earlier steps of the lab.
 
