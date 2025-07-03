@@ -70,9 +70,9 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
 
 1. Back on the "Connection Dialog", for each of the options, click each drop down and select the following options:
     - Subscription: Select the **default Subscription provided (1)**.
-    - Resource Group: Select the **default RG provided (2)**.
+    - Resource Group: Select the **SKAgents-<inject key="Deployment ID" enableCopy="false"/> (2)** RG.
     - Location: Select the **default location (3)**.
-    - Server: Keep the default that was selected (4).
+    - Server: Select the default server that appears **(4)**.
     - Database: Select **cases (5)**.
     - Authentication Type: Select **Entra Auth (6)**.
 
@@ -83,6 +83,7 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
     - Click **Add Entra ID (1)**.
     - Select your previously logged-in **Azure Account**. Once the confirmation window appears, close the browser tab.
     - Ensure your Lab account is now selected as the **"Azure Account"**.
+    - Enter the **Entra Username** as 
     - Enter the **Connection Name** as **lab (2)**.
     - Leave the **Server Group (3)** to the default value.
     - Click **Test Connection (4)** to verify connectivity.
