@@ -121,7 +121,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
     ![](Images/Cell10.png)
 
-1. Run the **second** cell under **Part 3.11: Adding Memory into the Agent.****  This adds memory capability by storing and retrieving embeddings to improve agent responses. Observe the output and how the agent’s response incorporates the memory context.
+1. Run the **second** cell under **Part 3.11: Adding Memory into the Agent.** This adds memory capability by storing and retrieving embeddings to improve agent responses. Observe the output and how the agent’s response incorporates the memory context.
 
     ![](Images/Cell11.png)
     ![](Images/Cell11a.png)
