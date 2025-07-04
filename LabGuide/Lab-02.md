@@ -26,7 +26,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 1. Run the first cell under **Part 3.2: Setup the Agent App Python imports**. This step imports the necessary modules, preparing the technical foundation for building an AI-powered agent that interacts with a **PostgreSQL database** and **OpenAI services**.
 
-   ![](Images/L2-S1.png)
+   ![](Images/Cell1.png)
 
 1. Within **VS Code**, select the **ellipses(1)**, then select **Terminal(2)**, and click on **New Terminal(3)**.
 
@@ -70,7 +70,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 1. Run the cell under **Part 3.6: Improve Agent Accuracy by Adding Semantic Re-ranking Query Plugin**. In this step, we add a new plugin called **SemanticRerankingPlugin** to increase the precision of our agent’s search results.
 
-   ![](Images/L2-S9.png)
+   ![](Images/Cell5.png)
 
    >**Note:** This cell might take 5-6 mins to run. 
 
@@ -101,26 +101,30 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 1. Run the cell under **Part 3.7: Add a GraphRAG Query PlugIn to the Agent for Additional Accuracy Improvements**. In this step, we build another advanced plugin called **GraphDatabasePlugin**, which combines vector search with graph analysis to find the most influential cases related to a query topic.
 
-   ![](Images/L2-S14.png)
+   ![](Images/Cell6.png)
 
 1. Run the cell **Part 3.8: Re-Assemble our Agent with New Advanced PlugIns and Re-Test**. In this step, we re-assemble the full agent by attaching all of the custom plugins we’ve created so far: **DatabaseSearchPlugin**, **SemanticRerankingPlugin**, and **GraphDatabasePlugin**. Observe the output and notice how we asked for **10 cases**, and this time received **10 cases**.
      
-   ![](Images/L2-S15.png)   
+   ![](Images/Cell7.png)   
    ![](Images/L2-S16.png)
 
 1. Run the cell **Part 3.9: Adding a Weather PlugIn to the Agent**. In this step, we introduce a **WeatherPlugin** that enables the agent to retrieve historical weather data (specifically rainfall) based on a given date and geographic location. This is especially useful in real estate or tenant-landlord disputes where weather-related damage may be a legal factor.
   
-    ![](Images/L2-S17.png)
+    ![](Images/Cell8.png)
 
 1. Run the cell **Part 3.10: Add our New Weather PlugIn to our Agent and Re-Test**. In this step, we complete our agent by including the new **WeatherPlugin** alongside our database and semantic plugins. This enables the agent to answer more complex, multi-part prompts that require both legal case analysis and external factual grounding. Observe the output and how the agent combines different results into a single response.
     
-    ![](Images/L2-S18.png)
-    ![](Images/L2-S19.png)
+    ![](Images/Cell9.png)
+    ![](Images/Cell9a.png)
 
-1. Run the cell **Part 3.11: Adding Memory into the Agent**. In this step, we complete our agent’s capabilities by enabling **semantic memory** using **SemanticTextMemory** backed by a **PostgreSQL vector store**. Observe the output and how the agent’s response incorporates the memory context.
+1. Run the **first** cell under **Part 3.11: Adding Memory into the Agent.**  This sets up a custom memory store using PostgreSQL.
 
-    ![](Images/L2-S20.png)
-    ![](Images/L2-S21.png)
+    ![](Images/Cell10.png)
+
+1. Run the **second** cell under **Part 3.11: Adding Memory into the Agent.****  This adds memory capability by storing and retrieving embeddings to improve agent responses. Observe the output and how the agent’s response incorporates the memory context.
+
+    ![](Images/Cell11.png)
+    ![](Images/Cell11a.png)
 
 ## Review
 
