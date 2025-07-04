@@ -91,7 +91,7 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
 
       - **Note:** Wait for sometime for the connection to establish.
 
-   ![](Images/L1-S18.png)
+   ![](Images/Connection1.png)
    
 ## Task 2: Launch PSQL Command Line Shell in VS Code
 
