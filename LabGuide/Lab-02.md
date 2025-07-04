@@ -66,7 +66,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 1. Verify that you are **connected(1)** to your database in the **setup_reranker.sql** file. Now, replace **AZURE_OPENAI_KEY** with the value of **AZURE_OPENAI_KEY(2)** that you copied in the previous step, and replace **AZURE_OPENAI_ENDPOINT** with the value of **AZURE_OPENAI_ENDPOINT(3)** that you copied in the previous step. **Run(4)** the SQL file after updating the values.
 
-    ![](Images/L2-S8.png)
+    ![](Images/reranker.png)
 
 1. Run the cell under **Part 3.6: Improve Agent Accuracy by Adding Semantic Re-ranking Query Plugin**. In this step, we add a new plugin called **SemanticRerankingPlugin** to increase the precision of our agent’s search results.
 
