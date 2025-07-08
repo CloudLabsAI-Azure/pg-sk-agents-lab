@@ -199,8 +199,7 @@ In this task, you initialize the database with sample tables and data, configure
    ```
 
    ![](Images/E1-S50.png)
-  
-  
+    
 1. Execute the commands below to add values to the **configuration table**. Ensure you replace **{AZURE_OPENAI_ENDPOINT}** and **{AZURE_OPENAI_KEY}** with the values you copied in the earlier step.
 
    ```
