@@ -293,6 +293,7 @@ Now that we have some sample data, it's time to generate and store the embedding
 
     ```sql
     CREATE EXTENSION IF NOT EXISTS pg_diskann;
+    CREATE EXTENSION IF NOT EXISTS age;
     ```
 
    ![](Images/L1-S38.png) 
