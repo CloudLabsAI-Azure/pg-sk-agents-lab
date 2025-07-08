@@ -162,8 +162,7 @@ In this task, you initialize the database with sample tables and data, configure
 
 1. To confirm you are in the correct folder context, enter the command: `\! cd`.
 
-   ![](Images/L1-S25.png)
-
+    ![](Images/L1-S25.png)
 
 1. At the **PSQL Command Line Shell**, run the following command to add a couple of tables to the **Cases** database and populate them with sample data.
    
