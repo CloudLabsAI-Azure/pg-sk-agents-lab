@@ -6,7 +6,7 @@ In this lab, you will take everything learned so far and build our Agentic App. 
 
 ## Objectives
 
-In this exercise, you will complete the following tasks:
+In this lab, you will complete the following tasks:
 
 - Task 1: Semantic Agent Configuration and Plugin Assembly
 
