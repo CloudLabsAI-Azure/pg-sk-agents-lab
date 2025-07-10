@@ -4,7 +4,13 @@
 
 In this lab, you will take everything learned so far and build our Agentic App. You will work in a Python Jupyter Notebook in VS Code to create a Semantic Kernel Agent that can reason over the legal cases database deployed earlier. Additionally, you will incorporate external web service data and use memory to improve the agent’s responses over time.
 
-## Task 1: Agent App Setup and Plugin Integration
+## Objectives
+
+In this exercise, you will complete the following tasks:
+
+- Task 1: Semantic Agent Configuration and Plugin Assembly
+
+## Task 1: Semantic Agent Configuration and Plugin Assembly
 
 In this task, we will create and test multiple plugins including DatabaseSearchPlugin, SemanticRerankingPlugin, GraphDatabasePlugin, and WeatherPlugin to enhance the agent’s capabilities, then enable semantic memory and reassemble the agent for final testing.
 
