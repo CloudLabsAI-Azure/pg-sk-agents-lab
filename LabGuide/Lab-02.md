@@ -64,6 +64,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 1. Now run the **Part 3.5: Test Run of our New Agent** cell. Now that we have created our first plugin, we're ready to assemble and test an initial version of our agent. Observe the output and notice how we asked for **10 cases**, but only got **2**.
   
    ![](Images/L2-S6.png)
+
    ![](Images/L2-S6a.png)
 
 1. In **VS Code**, in the folder structure, expand the folder **Scripts(1)**, open the file **setup_reranker.sql(2)**, press **CTRL+SHIFT+C** to open the **VS Code action panel**, and select the connection named **lab(3)** that you created in the earlier steps of the lab.
@@ -112,6 +113,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 1. Run the cell **Part 3.8: Re-Assemble our Agent with New Advanced PlugIns and Re-Test**. In this step, we re-assemble the full agent by attaching all of the custom plugins we’ve created so far: **DatabaseSearchPlugin**, **SemanticRerankingPlugin**, and **GraphDatabasePlugin**. Observe the output and notice how we asked for **10 cases**, and this time received **10 cases**.
      
    ![](Images/Cell7.png)   
+
    ![](Images/L2-S16.png)
 
 1. Run the cell **Part 3.9: Adding a Weather PlugIn to the Agent**. In this step, we introduce a **WeatherPlugin** that enables the agent to retrieve historical weather data (specifically rainfall) based on a given date and geographic location. This is especially useful in real estate or tenant-landlord disputes where weather-related damage may be a legal factor.
@@ -121,6 +123,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 1. Run the cell **Part 3.10: Add our New Weather PlugIn to our Agent and Re-Test**. In this step, we complete our agent by including the new **WeatherPlugin** alongside our database and semantic plugins. This enables the agent to answer more complex, multi-part prompts that require both legal case analysis and external factual grounding. Observe the output and how the agent combines different results into a single response.
     
     ![](Images/Cell9.png)
+
     ![](Images/Cell9a.png)
 
 1. Run the **first** cell under **Part 3.11: Adding Memory into the Agent.**  This sets up a custom memory store using PostgreSQL.
@@ -130,6 +133,7 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 1. Run the **second** cell under **Part 3.11: Adding Memory into the Agent.** This adds memory capability by storing and retrieving embeddings to improve agent responses. Observe the output and how the agent’s response incorporates the memory context.
 
     ![](Images/Cell11.png)
+
     ![](Images/Cell11a.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
