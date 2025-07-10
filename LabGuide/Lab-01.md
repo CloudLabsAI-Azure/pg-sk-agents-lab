@@ -98,7 +98,7 @@ In this task, you will connect a PostgreSQL Flexible Server on Azure to VS Code 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="a5e3a8ae-6d7f-4145-937b-328c16b91ee1" />  
+  <validation step="a5e3a8ae-6d7f-4145-937b-328c16b91ee1" />  
    
 ## Task 2: Launch PSQL Command Line Shell in VS Code
 
