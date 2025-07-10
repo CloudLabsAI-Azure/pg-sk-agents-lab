@@ -126,6 +126,13 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
     ![](Images/Cell11.png)
     ![](Images/Cell11a.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="b3412c61-ddf9-4f2d-bdcf-a93aa4feb0df" />  
+
 ## Review
 
 - Created and tested DatabaseSearchPlugin, SemanticRerankingPlugin, and GraphDatabasePlugin.
