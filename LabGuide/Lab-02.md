@@ -155,4 +155,4 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 - https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview
 - https://learn.microsoft.com/en-us/azure/ai-services/openai/overview
 
-# You have successfully completed the lab
+# You have successfully completed the lab!
