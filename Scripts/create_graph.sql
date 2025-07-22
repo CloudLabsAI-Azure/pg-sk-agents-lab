@@ -1,7 +1,7 @@
 -- Create a temp table to store the cases data
-DROP TABLE IF EXISTS public.temp_cases;
-CREATE TABLE public.temp_cases(data jsonb);
-\COPY public.temp_cases (data) FROM 'Dataset/cases.csv' WITH (FORMAT csv, HEADER true);
+-- DROP TABLE IF EXISTS public.temp_cases;
+-- CREATE TABLE public.temp_cases(data jsonb);
+--\COPY public.temp_cases (data) FROM 'Dataset/cases.csv' WITH (FORMAT csv, HEADER true);
 
 CREATE OR REPLACE FUNCTION create_case_in_case_graph(case_id text)
 RETURNS void
