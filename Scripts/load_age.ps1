@@ -1,4 +1,4 @@
-$resourceGroupName = "ResourceGroup1"
+$resourceGroupName = "SKAgents-XXXXX"
 
 $postgresServerName = az postgres flexible-server list --resource-group $resourceGroupName --query "[0].name" --output tsv
 
