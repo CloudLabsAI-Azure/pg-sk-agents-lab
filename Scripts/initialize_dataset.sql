@@ -26,4 +26,3 @@ SELECT
         (data#>>'{court,id}')::int AS court_id, 
         array_to_string(ARRAY(SELECT jsonb_path_query(data, '$.casebody.opinions[*].text')), ', ') AS opinion
 FROM temp_cases;
-
