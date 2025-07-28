@@ -30,7 +30,11 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
 ## You can now proceed with running the `lab.ipynb` file to continue with the lab. If you encounter any confusion, please refer to the lab guide starting from here
 
-1. Run the first cell under **Part 3.2: Setup the Agent App Python imports**. This step imports the necessary modules, preparing the technical foundation for building an AI-powered agent that interacts with a **PostgreSQL database** and **OpenAI services**.
+1. Run the **first** cell under **Part 3.2: Setup the Agent App Python imports**. This installs Python packages listed in the requirements.txt file.
+
+   ![](Images/A1.png)
+
+1. Run the **second** cell under **Part 3.2: Setup the Agent App Python imports**. This step imports the necessary modules, preparing the technical foundation for building an AI-powered agent that interacts with a **PostgreSQL database** and **OpenAI services**.
 
    ![](Images/Cell1.png)
 
@@ -67,21 +71,13 @@ In this task, we will create and test multiple plugins including DatabaseSearchP
 
    ![](Images/L2-S6a.png)
 
-1. In **VS Code**, in the folder structure, expand the folder **Scripts(1)**, open the file **setup_reranker.sql(2)**, press **CTRL+SHIFT+C** to open the **VS Code action panel**, and select the connection named **lab(3)** that you created in the earlier steps of the lab.
-
-   ![](Images/L2-S7.png)
-
-1. Verify that you are **connected(1)** to your database in the **setup_reranker.sql** file. Now, replace **AZURE_OPENAI_KEY** with the value of **AZURE_OPENAI_KEY(2)** that you copied in the previous step, and replace **AZURE_OPENAI_ENDPOINT** with the value of **AZURE_OPENAI_ENDPOINT(3)** that you copied in the previous step. **Run(4)** the SQL file after updating the values.
-
-    ![](Images/reranker.png)
-
 1. Run the cell under **Part 3.6: Improve Agent Accuracy by Adding Semantic Re-ranking Query Plugin**. In this step, we add a new plugin called **SemanticRerankingPlugin** to increase the precision of our agent’s search results.
 
    ![](Images/Cell5.png)
 
    >**Note:** This cell might take 5-6 mins to run. 
 
-1. In **VS Code**, in the folder structure, expand the folder **Scripts(1)**, open the **create_graph.sql(2)** file, press **CTRL+SHIFT+C** to open the **VS Code action panel**, and select the connection named **lab(3)** that you created in the earlier steps of the lab.
+1. In **VS Code**, in the folder structure, expand the folder **Scripts(1)**, open the **create_graph.sql(2)** file, press **CTRL+SHIFT+C** to open the **VS Code action panel**, and select the connection named **lab<inject key="Deployment ID" enableCopy="false"/>(3)** that you created in the earlier steps of the lab.
 
     ![](Images/L2-S10.png)
 
