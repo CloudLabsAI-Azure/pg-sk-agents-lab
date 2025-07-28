@@ -1,4 +1,4 @@
-# Lab 1 - PostgreSQL Connection and AI Search Integration
+# Lab 1 - Enable Intelligent Search in PostgreSQL with Vectors and DiskANN
 
 ### Estimated time: 120 minutes
 
