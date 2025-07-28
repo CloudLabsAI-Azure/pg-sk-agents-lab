@@ -10,7 +10,7 @@ The lab begins by setting up a data environment and configuring Azure AI extensi
 
 ## Objective 
 
-- **Lab 1 - PostgreSQL Connection and AI Search Integration**: This lab establishes a PostgreSQL connection in VS Code, enables AI-driven semantic search using Azure OpenAI embeddings and DiskANN indexing, and integrates structured data with vector-based search for agent-based AI applications.
+- **Lab 1 - Enable Intelligent Search in PostgreSQL with Vectors and DiskANN**: This lab establishes a PostgreSQL connection in VS Code, enables AI-driven semantic search using Azure OpenAI embeddings and DiskANN indexing, and integrates structured data with vector-based search for agent-based AI applications.
 
 - **Lab 2 - Build a Semantic Kernel Agentic**: This lab involves building a Semantic Kernel Agentic app in a Python Jupyter Notebook using VS Code, enabling the agent to reason over a legal cases database, integrate external web data, and utilize memory for improved responses over time.
 
