@@ -1,4 +1,4 @@
-# Lab 1 - Enable Intelligent Search in PostgreSQL with Vectors and DiskANN
+# Lab 01 - Enable Intelligent Search in PostgreSQL with Vectors and DiskANN
 
 ### Estimated time: 120 minutes
 
